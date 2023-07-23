@@ -15,30 +15,30 @@ const formatFileSize = (bytes) => {
 
 const FileItem = ({ file, removeFile }) => {
   return (
-      <List.Item>
-        <div className="file-item">
-          <div className="file-info">
-            <Space>
+    <List.Item>
+      <div className="file-item">
+        <div className="file-info">
+          <Space>
             <span>
               {file.type === 'application/pdf' ? (
-                  <FilePdfOutlined style={{ marginRight: '8px' }} />
+                <FilePdfOutlined style={{ marginRight: '8px' }} />
               ) : file.type === 'application/zip' ? (
-                  <FileZipOutlined style={{ marginRight: '8px' }} />
+                <FileZipOutlined style={{ marginRight: '8px' }} />
               ) : file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ? (
-                  <FileExcelOutlined style={{ marginRight: '8px' }} />
+                <FileExcelOutlined style={{ marginRight: '8px' }} />
               ) : (
-                  <FileOutlined style={{ marginRight: '8px' }} />
+                <FileOutlined style={{ marginRight: '8px' }} />
               )}
               {file.name}
             </span>
-              <span>{formatFileSize(file.size)}</span>
-            </Space>
-          </div>
-          <Button type="text" className="remove-button" onClick={() => removeFile(file.name)}>
-            Remove
-          </Button>
+            <span>{formatFileSize(file.size)}</span>
+          </Space>
         </div>
-      </List.Item>
+        <Button type="text" className="remove-button" onClick={() => removeFile(file.name)}>
+          Remove
+        </Button>
+      </div>
+    </List.Item>
   );
 };
 
@@ -74,19 +74,19 @@ const App = () => {
     });
 
     Promise.all(promises)
-        .then(() => {
-          zip.generateAsync({ type: 'blob' }).then((content) => {
-            setIsCompressed(true);
-            setEstimatedCompressedSize(content.size);
-            downloadCompressedFile(content, compressedFileName);
-            setLoading(false);
-          });
-        })
-        .catch((error) => {
+      .then(() => {
+        zip.generateAsync({ type: 'blob' }).then((content) => {
+          setIsCompressed(true);
+          setEstimatedCompressedSize(content.size);
+          downloadCompressedFile(content, compressedFileName);
           setLoading(false);
-          console.error('Error compressing files:', error);
-          // Handle any error if required
         });
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.error('Error compressing files:', error);
+        // Handle any error if required
+      });
   };
 
   const downloadCompressedFile = (content, fileName) => {
@@ -129,14 +129,14 @@ const App = () => {
 
   const Savings = ({ title, value }) => {
     return (
-        <Card className="savings-card" bordered={false}>
-          <div>
-            <Space>
-              <Text strong>{title}</Text>
-              <Text>{value}</Text>
-            </Space>
-          </div>
-        </Card>
+      <Card className="savings-card" bordered={false}>
+        <div>
+          <Space>
+            <Text strong>{title}</Text>
+            <Text>{value}</Text>
+          </Space>
+        </div>
+      </Card>
     );
   };
 
@@ -146,18 +146,18 @@ const App = () => {
       dataIndex: 'name',
       key: 'name',
       render: (text, record) => (
-          <Space>
-            {record.type === 'application/pdf' ? (
-                <FilePdfOutlined style={{ marginRight: '8px' }} />
-            ) : record.type === 'application/zip' ? (
-                <FileZipOutlined style={{ marginRight: '8px' }} />
-            ) : record.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ? (
-                <FileExcelOutlined style={{ marginRight: '8px' }} />
-            ) : (
-                <FileOutlined style={{ marginRight: '8px' }} />
-            )}
-            {text}
-          </Space>
+        <Space>
+          {record.type === 'application/pdf' ? (
+            <FilePdfOutlined style={{ marginRight: '8px' }} />
+          ) : record.type === 'application/zip' ? (
+            <FileZipOutlined style={{ marginRight: '8px' }} />
+          ) : record.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ? (
+            <FileExcelOutlined style={{ marginRight: '8px' }} />
+          ) : (
+            <FileOutlined style={{ marginRight: '8px' }} />
+          )}
+          {text}
+        </Space>
       ),
     },
     {
@@ -171,52 +171,52 @@ const App = () => {
       dataIndex: 'action',
       key: 'action',
       render: (_, record) => (
-          <Button type="text" className="remove-button" onClick={() => removeFile(record.name)}>
-            Remove
-          </Button>
+        <Button type="text" className="remove-button" onClick={() => removeFile(record.name)}>
+          Remove
+        </Button>
       ),
     },
   ];
 
   return (
-      <div className="App">
-        <div className="centered-container">
-          <Title level={3}>File Compressor</Title>
-          <div {...getRootProps()} className="dropzone">
-            <input {...getInputProps()} />
-            <CloudUploadOutlined style={{ fontSize: '64px', color: '#1890ff' }} />
-            <p>Drag and drop files and folders here, or click to select</p>
-          </div>
-          {files.length > 0 && (
-              <div className="selected-files">
-                <h4>Selected Files:</h4>
-                <Table
-                    dataSource={files}
-                    columns={columns}
-                    rowKey={(record) => record.name}
-                    pagination={false}
-                    expandable={{
-                      expandedRowRender: (record) => <FileItem file={record} removeFile={removeFile} />,
-                      rowExpandable: (record) => true,
-                    }}
-                />
-              </div>
-          )}
-          {isCompressed && (
-              <div className="savings-container">
-                <Savings title="Total Size of Files:" value={formatFileSize(totalSize)} />
-                <Savings
-                    title="Estimated Savings:"
-                    value={`${formatFileSize(totalSize - estimatedCompressedSize)} (${calculateSavings().savingsInPercentage}%)`}
-                />
-              </div>
-          )}
-          <Button type="primary" onClick={compressFiles} disabled={files.length === 0}>
-            Compress Files
-          </Button>
-          {loading && <Spin size="large" />}
+    <div className="App">
+      <div className="centered-container">
+        <Title level={3}>File Compressor - EasyZip</Title>
+        <div {...getRootProps()} className="dropzone">
+          <input {...getInputProps()} />
+          <CloudUploadOutlined style={{ fontSize: '64px', color: '#1890ff' }} />
+          <p>Drag and drop files and folders here, or click to select</p>
         </div>
+        {files.length > 0 && (
+          <div className="selected-files">
+            <h4>Selected Files:</h4>
+            <Table
+              dataSource={files}
+              columns={columns}
+              rowKey={(record) => record.name}
+              pagination={false}
+              expandable={{
+                expandedRowRender: (record) => <FileItem file={record} removeFile={removeFile} />,
+                rowExpandable: (record) => true,
+              }}
+            />
+          </div>
+        )}
+        {isCompressed && (
+          <div className="savings-container">
+            <Savings title="Total Size of Files:" value={formatFileSize(totalSize)} />
+            <Savings
+              title="Estimated Savings:"
+              value={`${formatFileSize(totalSize - estimatedCompressedSize)} (${calculateSavings().savingsInPercentage}%)`}
+            />
+          </div>
+        )}
+        <Button type="primary" onClick={compressFiles} disabled={files.length === 0}>
+          Compress Files
+        </Button>
+        {loading && <Spin size="large" />}
       </div>
+    </div>
   );
 };
 
