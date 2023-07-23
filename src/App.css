@@ -1,3 +1,4 @@
+/* General Styles */
 .App {
   display: flex;
   justify-content: center;
@@ -43,8 +44,6 @@
 .selected-files {
   margin-top: 20px;
   text-align: left;
-  /* Remove fixed height and add max-height to control the expansion */
-  max-height: 300px; /* Set a maximum height for the container */
   overflow: auto; /* Add a scroll when content exceeds the height */
 }
 
@@ -96,4 +95,57 @@
   justify-content: space-between;
 }
 
-/* ... other styles ... */
+/* Improved Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .dropzone {
+    padding: 15px;
+  }
+  .dropzone .anticon {
+    font-size: 48px;
+  }
+  .ant-btn {
+    margin-top: 15px;
+  }
+  .selected-files {
+    /* Adjust height based on available screen height */
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+  }
+  .savings-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .savings-card {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+  }
+}
+
+/* New styles for mobile devices */
+@media screen and (max-width: 576px) {
+  .dropzone {
+    padding: 15px;
+  }
+  .dropzone .anticon {
+    font-size: 48px;
+  }
+  .ant-btn {
+    margin-top: 15px;
+  }
+  .selected-files {
+    /* Reduce margin-top and set max-height to show fewer rows initially */
+    margin-top: 10px;
+    max-height: calc(100vh - 280px);
+  }
+  .file-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .file-info {
+    margin-bottom: 8px;
+  }
+  .remove-button {
+    margin: 4px 0;
+  }
+}
