@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/compression-app/static/css/main.8f349242.css",
+    "main.js": "/compression-app/static/js/main.bbbdd07b.js",
+    "static/js/787.f94938cb.chunk.js": "/compression-app/static/js/787.f94938cb.chunk.js",
+    "index.html": "/compression-app/index.html",
+    "main.8f349242.css.map": "/compression-app/static/css/main.8f349242.css.map",
+    "main.bbbdd07b.js.map": "/compression-app/static/js/main.bbbdd07b.js.map",
+    "787.f94938cb.chunk.js.map": "/compression-app/static/js/787.f94938cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f349242.css",
+    "static/js/main.bbbdd07b.js"
+  ]
+}
