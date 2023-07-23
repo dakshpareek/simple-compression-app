@@ -1,7 +1,7 @@
 {
   "name": "file-compressor",
   "version": "0.1.0",
-  "homepage": "https://dakshpareek.github.io/simple-compression-app",
+  "homepage": "https://dakshpareek.github.io/",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
