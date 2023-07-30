@@ -1,18 +1,69 @@
 /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f0f2f5;
 }
 
 .centered-container {
-  text-align: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header img {
+  max-height: 50px;
+}
+
+.header nav {
+  display: flex;
+}
+
+.header a {
+  margin-left: 20px;
+  color: #1890ff;
+  text-decoration: none;
+}
+
+/* HeroBanner Styles */
+.hero-banner {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-banner h1 {
+  font-size: 36px;
+  color: #1890ff;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 18px;
+}
+
+/* CompressSection Styles */
+.compress-section {
+  margin-bottom: 40px;
 }
 
 .dropzone {
@@ -30,21 +81,16 @@
   margin-top: 10px;
 }
 
-/* Center the CloudUploadOutlined icon */
 .dropzone .anticon {
-  margin: 0 auto;
-  display: block;
-}
-
-/* Adjust the button position */
-.ant-btn {
-  margin-top: 20px;
+  font-size: 48px;
+  color: #1890ff;
+  margin-bottom: 10px;
 }
 
 .selected-files {
   margin-top: 20px;
   text-align: left;
-  overflow: auto; /* Add a scroll when content exceeds the height */
+  overflow: auto;
 }
 
 .selected-files h4 {
@@ -79,13 +125,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px; /* Add gap between the savings cards */
+}
+
+
+.savings-row {
+  display: flex;
+  align-items: center;
 }
 
 .savings-card {
   background-color: #e6f7ff;
   border: none;
   padding: 16px;
-  /* Set width to auto so that it takes only the required space */
   width: auto;
   margin-bottom: 20px;
 }
@@ -95,57 +147,59 @@
   justify-content: space-between;
 }
 
-/* Improved Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-  .dropzone {
-    padding: 15px;
-  }
-  .dropzone .anticon {
-    font-size: 48px;
-  }
-  .ant-btn {
-    margin-top: 15px;
-  }
-  .selected-files {
-    /* Adjust height based on available screen height */
-    max-height: calc(100vh - 350px);
-    overflow-y: auto;
-  }
-  .savings-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .savings-card {
-    width: 100%;
-    max-width: 250px;
-    margin-bottom: 10px;
+/* FAQSection Styles */
+.faq-section {
+  margin-bottom: 40px;
+}
+
+.ant-collapse {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ant-collapse-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1890ff;
+}
+
+.ant-collapse-content-box {
+  padding: 20px;
+}
+
+/* AdsSection Styles */
+.ads-section {
+  margin-bottom: 40px;
+}
+
+/* NavigationPages Styles */
+.navigation-pages {
+  margin-bottom: 40px;
+}
+
+/* BlogSection Styles */
+.blog-section {
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  .file-name {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
-/* New styles for mobile devices */
+.custom-collapse {
+  max-width: 500px; /* Adjust this value as needed */
+  margin: 0 auto;
+}
+
+/* Media query for mobile devices */
 @media screen and (max-width: 576px) {
-  .dropzone {
-    padding: 15px;
-  }
-  .dropzone .anticon {
-    font-size: 48px;
-  }
-  .ant-btn {
-    margin-top: 15px;
-  }
-  .selected-files {
-    /* Reduce margin-top and set max-height to show fewer rows initially */
-    margin-top: 10px;
-    max-height: calc(100vh - 280px);
-  }
-  .file-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .file-info {
-    margin-bottom: 8px;
-  }
-  .remove-button {
-    margin: 4px 0;
+  .custom-collapse {
+    max-width: 100%;
   }
 }
