@@ -7,11 +7,5 @@
     <priority>1.0</priority>
   </url>
   <!-- Add more URLs for each page on your website -->
-  <url>
-    <loc>https://www.easyzip.org/faq</loc>
-    <lastmod>2023-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- Add more URLs for other pages -->
 </urlset>
