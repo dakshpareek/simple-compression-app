@@ -6,9 +6,9 @@ const Header = () => {
       {/* Replace the logo with your actual logo */}
       <img src="logo.png" alt="Logo" className="logo" />
       <nav>
-        {/* <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a> */}
+        {/* <a href="/">Home</a> */}
+        <a href="/faq">FAQ</a>
+        {/* <a href="/contact">Contact</a> */}
       </nav>
     </header>
   );
