@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CompressSection from './components/CompressSection';
 import FAQSection from './components/FAQSection';
@@ -9,7 +9,7 @@ import Sitemap from './components/Sitemap';
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter basename='/'>
       <div className="App">
         <Header />
         <HeroBanner />
@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/sitemap.xml" element={<Sitemap />} />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 

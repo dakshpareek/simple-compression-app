@@ -6,6 +6,12 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+    <url>
+    <loc>http://www.easyzip.org/#/faq</loc>
+    <lastmod>2024-06-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Add more URLs for each page on your website -->
   <!-- Add more URLs for other pages -->
 </urlset>
