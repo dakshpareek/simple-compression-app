@@ -7,7 +7,7 @@ const Header = () => {
       {/* Replace the logo with your actual logo */}
       <img src="logo.png" alt="Logo" className="logo" />
       <nav>
-        {/* <a href="/">Home</a> */}
+        <Link to="/blog">Blogs</Link>
         <Link to="/faq">FAQ</Link>
         {/* <a href="/contact">Contact</a> */}
       </nav>

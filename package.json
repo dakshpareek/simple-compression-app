@@ -5,16 +5,19 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
+    "@contentful/rich-text-react-renderer": "^15.22.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.7.2",
+    "contentful": "^10.12.4",
     "jszip": "^3.10.1",
     "pako": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-dropzone-uploader": "^2.11.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
@@ -26,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "eslintConfig": {
     "extends": [
