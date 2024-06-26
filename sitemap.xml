@@ -14,29 +14,8 @@
       </url>
       
         <url>
-          <loc>http://www.easyzip.org/#/blog/how-to-compress</loc>
-          <lastmod>2024-06-25T17:02:15.535Z</lastmod>
-          <changefreq>daily</changefreq>
-          <priority>0.8</priority>
-        </url>
-      
-        <url>
-          <loc>http://www.easyzip.org/#/blog/static-sites-are-great</loc>
-          <lastmod>2024-06-25T16:52:13.432Z</lastmod>
-          <changefreq>daily</changefreq>
-          <priority>0.8</priority>
-        </url>
-      
-        <url>
-          <loc>http://www.easyzip.org/#/blog/hello-world</loc>
-          <lastmod>2024-06-25T16:52:12.785Z</lastmod>
-          <changefreq>daily</changefreq>
-          <priority>0.8</priority>
-        </url>
-      
-        <url>
-          <loc>http://www.easyzip.org/#/blog/automate-with-webhooks</loc>
-          <lastmod>2024-06-25T16:52:11.931Z</lastmod>
+          <loc>http://www.easyzip.org/#/blog/how-to-use-easyzip-for-efficient-file-compression</loc>
+          <lastmod>2024-06-26T13:57:12.598Z</lastmod>
           <changefreq>daily</changefreq>
           <priority>0.8</priority>
         </url>
